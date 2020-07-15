@@ -1,4 +1,4 @@
-##               Centos7.4系统下安装httpd，mariadb，php7.2环境运行禅道            
+##               Centos7.4系统下安装httpd，mariadb，php7.2环境运行禅道
 
 
 
@@ -12,7 +12,7 @@
 
 PHP需要使用 pdo, pdo_mysql, json, filter, openssl, mbstring, zlib, curl, gd, iconv 模块，需要确保 PHP 运行环境有加载上述模块。             
 
-# **二、安装Apache服务**             
+# **二、安装Apache服务**
 
 依次执行如下指令，安装并开启 Apache 服务
 
@@ -95,7 +95,7 @@ echo '<?php phpinfo();?>'  >  /var/www/html/index.php
 ![img](https://www.zentao.net/file.php?f=202007/f_0a31263aec20df3b188c85a33fd322f0&t=png&o=&s=&v=1593668271)
             
 
-# **四、安装mariadb 数据库**             
+# **四、安装mariadb 数据库**
 
 安装并开启 mariadb 服务: 
 
@@ -121,11 +121,11 @@ Remove test database and access to it? [Y/n]  # 删除测试表 y
 Reload privilege tables now? [Y/n] # 重新加载配置表 y
 ```
 
-**五、安装禅道软件**             
+# **五、安装禅道软件**
 
-1. 下载新版禅道软件源码包, 下载地址：http://www.zentao.net/download.html                     
+1. 下载新版禅道软件源码包, 下载地址：http://www.zentao.net/download.html
 
-2. 使用 rz 命令将禅道软件上传至服务器的 /var/www/html 目录，您也可以使用其他方式上传。             
+2. 使用 rz 命令将禅道软件上传至服务器的 /var/www/html 目录，您也可以使用其他方式上传。
 
 ```js
 yum -y install lrzsz # 安装rz上传程序 
@@ -133,19 +133,19 @@ cd /var/www/html # 切换到apache根目录
 rz # 上传源码包禅道
 ```
 
-3. 使用 unzip 命令解压禅道源码包程序。            
+3. 使用 unzip 命令解压禅道源码包程序。
 
 ```js
 yum -y install unzip # 安装unzip解压 
 unzip ZenTaoPMS.*.zip -d /var/www/html # 解压禅道源码包
 ```
 
-![img](https://www.zentao.net/file.php?f=201912/f_9470fecaa49c6237183ea495f71fea4b&t=png&o=&s=&v=1577175823)               
+![img](https://www.zentao.net/file.php?f=201912/f_9470fecaa49c6237183ea495f71fea4b&t=png&o=&s=&v=1577175823) 
 
-4. 修改 Apache 访问路径: vim /etc/httpd/conf/httpd.conf , 注意修改如下图 3处位置 :              
+4. 修改 Apache 访问路径: vim /etc/httpd/conf/httpd.conf , 注意修改如下图 3处位置 :
 
-![img](https://www.zentao.net/file.php?f=201912/f_6d7cd61d46567e16b922fa8b1ea27601&t=png&o=&s=&v=1577175823)               
+![img](https://www.zentao.net/file.php?f=201912/f_6d7cd61d46567e16b922fa8b1ea27601&t=png&o=&s=&v=1577175823) 
 
-修改后 systemctl restart httpd 重启 Apache 服务, 使刚修改的配置生效 ;              
+修改后 systemctl restart httpd 重启 Apache 服务, 使刚修改的配置生效 ;
 
-5. 解压完成后，浏览器访问http://服务器ip 地址，安装禅道即可。            
+5. 解压完成后，浏览器访问http://服务器ip 地址，安装禅道即可。
